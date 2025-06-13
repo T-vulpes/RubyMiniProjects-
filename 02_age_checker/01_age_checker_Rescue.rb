@@ -1,9 +1,9 @@
-print "Lütfen doğum yılınızı giriniz: "
+print "Please enter your year of birth: "
 
 begin
-  dogum_yili = Integer(gets)
-  yas = 2025 - dogum_yili
-  puts "Yaşınız: #{yas}"
+  birth_date = Integer(gets)
+  age = 2025 - birth_date
+  puts "Your Age: #{age}"
 rescue
-  puts "Hatalı giriş yaptınız! Lütfen sadece sayı girin."
+  puts "You have entered incorrectly! Please enter only numbers.!"
 end
