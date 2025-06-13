@@ -40,8 +40,7 @@ class StudentGrade
   end
 end
 
-# Kullanıcıdan veri alma
-print "Enter your midterm (vize) score: "
+print "Enter your midterm score: "
 vize = gets.chomp
 print "Enter your final exam score: "
 final = gets.chomp
