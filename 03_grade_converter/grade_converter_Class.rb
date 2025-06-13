@@ -1,14 +1,14 @@
 class StudentGrade
-  attr_reader :vize, :final, :average
+  attr_reader :midterm, :final, :average
 
   def initialize(vize, final)
-    @vize = vize.to_f
+    @midterm = midterm.to_f
     @final = final.to_f
     @average = calculate_average
   end
 
   def calculate_average
-    (@vize * 0.4) + (@final * 0.6)
+    (@midterm * 0.4) + (@final * 0.6)
   end
 
   def letter_grade
@@ -33,7 +33,7 @@ class StudentGrade
   end
 
   def print_summary
-    puts "Vize: #{@vize}"
+    puts "midterm: #{@midterm}"
     puts "Final: #{@final}"
     puts "Average: #{@average.round(2)}"
     puts "Letter Grade: #{letter_grade}"
@@ -45,7 +45,6 @@ vize = gets.chomp
 print "Enter your final exam score: "
 final = gets.chomp
 
-# Nesne oluştur ve sonucu yazdır
-student = StudentGrade.new(vize, final)
+student = StudentGrade.new(midterm, final)
 puts "\n--- Grade Report ---"
 student.print_summary
