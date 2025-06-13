@@ -1,30 +1,30 @@
 # calculator_if.rb
 
-puts "Birinci sayıyı giriniz:"
-sayi1 = gets.to_f
+puts "Enter the first number:"
+number1 = gets.to_f
 
-puts "İkinci sayıyı giriniz:"
-sayi2 = gets.to_f
+puts "Enter the second number:"
+number2 = gets.to_f
 
-puts "Hangi işlemin yapılmasını istersiniz? (+, -, /, *, **, %):"
-islem = gets.chomp.strip
+puts "What operation would you like to perform? (+, -, /, *, **, %):"
+oprt = gets.chomp.strip
 
-if islem == "+"
-  puts "Sonuç: #{sayi1 + sayi2}"
-elsif islem == "-"
-  puts "Sonuç: #{sayi1 - sayi2}"
-elsif islem == "/"
-  if sayi2 == 0
-    puts "Bir sayı sıfıra bölünemez!"
+if oprt == "+"
+  puts "result: #{number1 + number2}"
+elsif oprt == "-"
+  puts "result: #{number1 - number2}"
+elsif oprt == "/"
+  if number2 == 0
+    puts "A number cannot be divided by zero!"
   else
-    puts "Sonuç: #{sayi1 / sayi2}"
+    puts "result: #{number1 / number2}"
   end
-elsif islem == "*"
-  puts "Sonuç: #{sayi1 * sayi2}"
-elsif islem == "**"
-  puts "Sonuç: #{sayi1 ** sayi2}"
-elsif islem == "%"
-  puts "Sonuç: #{sayi1 % sayi2}"
+elsif oprt == "*"
+  puts "result: #{number1 * number2}"
+elsif oprt == "**"
+  puts "result: #{number1 ** number2}"
+elsif oprt == "%"
+  puts "result: #{number1 % number2}"
 else
-  puts "Yanlış işlem komutu girdiniz!"
+  puts "You entered the wrong action command!"
 end
