@@ -1,7 +1,7 @@
 class StudentGrade
   attr_reader :midterm, :final, :average
 
-  def initialize(vize, final)
+  def initialize(midterm, final)
     @midterm = midterm.to_f
     @final = final.to_f
     @average = calculate_average
@@ -41,7 +41,7 @@ class StudentGrade
 end
 
 print "Enter your midterm score: "
-vize = gets.chomp
+midterm = gets.chomp
 print "Enter your final exam score: "
 final = gets.chomp
 
