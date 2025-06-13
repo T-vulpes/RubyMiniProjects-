@@ -1,10 +1,10 @@
 loop do
-  print "Doğum yılınızı girin: "
+  print "Enter your year of birth: "
   begin
     year = Integer(gets)
-    puts "Yaşınız: #{2025 - year}"
+    puts "Your age: #{2025 - year}"
     break
   rescue
-    puts "Geçersiz giriş, lütfen tekrar deneyin."
+    puts "Invalid login, please try again."
   end
 end
