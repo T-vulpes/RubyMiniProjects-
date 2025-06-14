@@ -1,11 +1,3 @@
-=begin
-**Features:**
-- File.read, File.write, File.truncate
-- Deleting specific lines
-- Error handling with `rescue`
-=end
-
-# Function to read file content
 def read_file
   begin
     File.open("volleyballplayers.txt", "r") do |file|
