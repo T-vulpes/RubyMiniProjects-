@@ -25,7 +25,6 @@ def write_to_file
   end
 end
 
-# Function to delete entire content of the file
 def clear_file
   begin
     File.open("volleyballplayers.txt", "w") do |file|
