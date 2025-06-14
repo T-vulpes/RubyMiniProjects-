@@ -36,11 +36,9 @@ def clear_file
   end
 end
 
-# Function to delete a specific line
 def delete_line
   begin
     lines = File.readlines("volleyballplayers.txt")
-
     puts "\n📄 Current File Content:"
     lines.each_with_index do |line, index|
       puts "#{index + 1}: #{line.strip}"
@@ -55,7 +53,6 @@ def delete_line
     end
 
     lines.delete_at(line_to_delete - 1)
-
     File.open("volleyballplayers.txt", "w") do |file|
       lines.each { |line| file.puts line }
     end
