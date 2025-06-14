@@ -3,11 +3,11 @@ attempt = 0
 max_attempts = 3
 
 while attempt < max_attempts
-  print "Şifrenizi giriniz: "
+  print "Enter your password: "
   user_input = gets.chomp
 
   if user_input == correct_password
-    puts "Giriş başarılı, şifre doğru!"
+    puts "Login successful, password correct!"
     break
   else
     attempt += 1
