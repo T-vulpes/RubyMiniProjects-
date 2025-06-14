@@ -10,7 +10,6 @@ def password_correct?(input, correct)
   input == correct
 end
 
-# Hatalı giriş sonrası mesaj gösterir
 def print_error_message(remaining_attempts)
   if remaining_attempts > 0
     puts "Incorrect password. Try again. (Attempts left: #{remaining_attempts})"
@@ -19,7 +18,6 @@ def print_error_message(remaining_attempts)
   end
 end
 
-# Giriş kontrol döngüsünü yönetir
 def login_process
   attempts = 0
 
