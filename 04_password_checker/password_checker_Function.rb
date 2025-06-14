@@ -1,13 +1,11 @@
 MAX_ATTEMPTS = 3
 CORRECT_PASSWORD = "12345"
 
-# Kullanıcıdan şifre alır
 def prompt_password
   print "Enter your password: "
   gets.chomp
 end
 
-# Şifre doğru mu kontrol eder
 def password_correct?(input, correct)
   input == correct
 end
