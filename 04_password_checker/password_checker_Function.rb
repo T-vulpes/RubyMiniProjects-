@@ -36,5 +36,4 @@ def login_process
   false
 end
 
-# Programı çalıştır
 login_process
