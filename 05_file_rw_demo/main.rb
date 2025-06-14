@@ -12,7 +12,6 @@ def read_file
   end
 end
 
-# Function to append to the file
 def write_to_file
   begin
     File.open("volleyballplayers.txt", "a") do |file|
