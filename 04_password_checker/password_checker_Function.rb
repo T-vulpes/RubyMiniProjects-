@@ -32,7 +32,6 @@ def login_process
       print_error_message(MAX_ATTEMPTS - attempts)
     end
   end
-
   false
 end
 
