@@ -68,7 +68,6 @@ def delete_line
   end
 end
 
-# Main menu
 def main_menu
   loop do
     puts "\n📘 What would you like to do?"
@@ -104,5 +103,4 @@ def main_menu
   end
 end
 
-# Start the program
 main_menu
