@@ -12,9 +12,9 @@ while attempt < max_attempts
   else
     attempt += 1
     if attempt < max_attempts
-      puts "Şifre yanlış, tekrar deneyiniz (Kalan hakkınız: #{max_attempts - attempt})"
+      puts "Password is incorrect, try again (Your remaining: #{max_attempts - attempt})"
     else
-      puts "Giriş başarısız! Maksimum deneme hakkınızı kullandınız."
+      puts "Login failed! You have used up your maximum attempts."
     end
   end
 end
