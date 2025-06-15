@@ -29,7 +29,6 @@ def register_user
   puts "✅ User registered successfully!"
 end
 
-# Check if username already exists
 def username_exists?(username)
   begin
     File.foreach("usersinfo.txt") do |line|
@@ -42,7 +41,6 @@ def username_exists?(username)
   false
 end
 
-# Login
 def login
   begin
     print "\n👤 Username: "
