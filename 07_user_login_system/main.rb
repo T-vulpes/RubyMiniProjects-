@@ -68,7 +68,6 @@ def login
   end
 end
 
-# Display all users
 def show_users
   begin
     puts "\n📄 Registered Users:"
@@ -81,7 +80,6 @@ def show_users
   end
 end
 
-# Delete a user
 def delete_user
   begin
     lines = File.readlines("usersinfo.txt")
