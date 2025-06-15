@@ -8,7 +8,7 @@ max_attempts = 3
 
 while attempt < max_attempts
   start_time = Time.now
-  print "\n🔢 Enter your guess: "
+  print "\nEnter your guess: "
   guess = gets.to_i
 
   if guess == secret_number
@@ -18,7 +18,7 @@ puts "You finished in #{(end_time - start_time).round(2)} seconds."
 
     break
   elsif guess < secret_number
-    puts "⬆️ Try a higher number."
+    puts "Try a higher number."
   elsif guess > secret_number
     puts "Try a lower number."
   else
