@@ -12,7 +12,6 @@ class UserInfo
   end
 end
 
-# Register new user
 def register_user
   puts "\n📝 Register a new user"
   print "Enter username: "
