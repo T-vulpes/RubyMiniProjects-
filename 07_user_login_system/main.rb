@@ -109,7 +109,6 @@ def delete_user
   end
 end
 
-# Main menu
 def main_menu
   loop do
     puts "\n📋 Main Menu"
