@@ -12,7 +12,7 @@ while attempt < max_attempts
   guess = gets.to_i
 
   if guess == secret_number
-    puts "🎉 Congratulations! You guessed the number on attempt ##{attempt + 1}!"
+    puts "Congratulations! You guessed the number on attempt ##{attempt + 1}!"
     end_time = Time.now
 puts "You finished in #{(end_time - start_time).round(2)} seconds."
 
@@ -22,13 +22,13 @@ puts "You finished in #{(end_time - start_time).round(2)} seconds."
   elsif guess > secret_number
     puts "Try a lower number."
   else
-    puts "⚠️ Invalid input! Please enter a valid number."
+    puts "Invalid input! Please enter a valid number."
   end
 
   attempt += 1
 
   if attempt == max_attempts
-    puts "\n❌ You've used all your attempts. The correct number was: #{secret_number}"
+    puts "\nYou've used all your attempts. The correct number was: #{secret_number}"
         end_time = Time.now
 puts "You finished in #{(end_time - start_time).round(2)} seconds."
   end
