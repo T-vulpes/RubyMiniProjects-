@@ -134,5 +134,4 @@ def main_menu
   end
 end
 
-# Start the program
 main_menu
