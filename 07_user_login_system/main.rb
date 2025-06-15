@@ -47,7 +47,6 @@ def login
     username_input = gets.chomp
     print "Password: "
     password_input = gets.chomp
-
     authenticated = false
 
     File.foreach("usersinfo.txt") do |line|
