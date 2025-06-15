@@ -1,13 +1,3 @@
-=begin
-Topics: class, initialize, file read/write, methods, rescue, case
-- Define a UserInfo class
-- Save new user (if username doesn't already exist)
-- Login with verification
-- View all users
-- Delete a user
-=end
-
-# User class
 class UserInfo
   attr_accessor :username, :password
 
