@@ -20,7 +20,6 @@ module MathUtils
     a - b
   end
 
-  # Returns the product of two numbers
   def self.multiply(a, b)
     a * b
   end
