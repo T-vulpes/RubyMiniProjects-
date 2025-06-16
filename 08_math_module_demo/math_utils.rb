@@ -41,5 +41,4 @@ module MathUtils
     str = n.to_s
     str == str.reverse
   end
-
 end
