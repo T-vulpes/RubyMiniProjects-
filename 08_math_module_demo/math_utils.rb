@@ -33,7 +33,6 @@ module MathUtils
     a % b
   end
 
-  # Calculates the sum of the digits of a number
   def self.digit_sum(n)
     n.abs.digits.sum
   end
