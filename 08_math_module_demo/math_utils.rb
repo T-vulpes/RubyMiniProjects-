@@ -8,7 +8,6 @@ module MathUtils
     (2..Math.sqrt(n)).none? { |i| n % i == 0 }
   end
 
-  # Raises base to the power of exponent
   def self.power(base, exponent)
     base**exponent
   end
