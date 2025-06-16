@@ -1,11 +1,8 @@
-# math_utils.rb
-
 module MathUtils
   def self.factorial(n)
     (1..n).inject(1, :*)
   end
 
-  # Checks whether the number is prime
   def self.is_prime?(n)
     return false if n <= 1
     (2..Math.sqrt(n)).none? { |i| n % i == 0 }
