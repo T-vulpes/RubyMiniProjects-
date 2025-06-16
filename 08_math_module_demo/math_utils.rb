@@ -24,13 +24,11 @@ module MathUtils
     a * b
   end
 
-  # Returns the result of dividing a by b
   def self.divide(a, b)
     return "Cannot divide by zero!" if b == 0
     a / b.to_f
   end
 
-  # Returns the remainder of a divided by b
   def self.modulo(a, b)
     a % b
   end
