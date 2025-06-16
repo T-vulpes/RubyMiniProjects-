@@ -37,7 +37,6 @@ module MathUtils
     n.abs.digits.sum
   end
 
-  # Checks if a number is a palindrome (reads the same forwards and backwards)
   def self.palindrome?(n)
     str = n.to_s
     str == str.reverse
