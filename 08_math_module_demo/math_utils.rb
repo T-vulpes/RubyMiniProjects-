@@ -12,12 +12,10 @@ module MathUtils
     base**exponent
   end
 
-  # Returns the sum of two numbers
   def self.sum(a, b)
     a + b
   end
 
-  # Returns the result of subtracting b from a
   def self.subtract(a, b)
     a - b
   end
