@@ -61,5 +61,4 @@ def menu
   end
 end
 
-# Start the program
 menu
