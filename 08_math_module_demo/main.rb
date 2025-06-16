@@ -1,5 +1,3 @@
-# main.rb
-
 require_relative 'math_utils'
 
 def menu
