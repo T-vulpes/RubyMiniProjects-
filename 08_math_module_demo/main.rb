@@ -2,7 +2,7 @@ require_relative 'math_utils'
 
 def menu
   loop do
-    puts "\n📐 Math Operations Menu:"
+    puts "\nMath Operations Menu:"
     puts "1. Factorial"
     puts "2. Prime Check"
     puts "3. Power"
