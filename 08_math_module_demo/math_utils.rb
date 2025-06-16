@@ -1,8 +1,6 @@
 # math_utils.rb
 
 module MathUtils
-
-  # Calculates the factorial of a number (n!)
   def self.factorial(n)
     (1..n).inject(1, :*)
   end
