@@ -1,4 +1,3 @@
-# 📌 List sınıfı
 class List
   attr_accessor :items
 
