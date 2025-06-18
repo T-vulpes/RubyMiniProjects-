@@ -59,25 +59,25 @@ def delete_user_plans(file_name, selected_user)
     file.puts new_lines
   end
 
-  puts "\n✅ All plans of '#{selected_user}' have been deleted!"
+  puts "\nAll plans of '#{selected_user}' have been deleted!"
 end
 
 def show_plans(file_name)
   if File.exist?(file_name)
-    puts "\n📄 Saved Plans:"
+    puts "\nSaved Plans:"
     puts File.read(file_name)
   else
     puts "No saved plans found."
   end
 end
 
-puts "📝 Please enter your name:"
+puts "Please enter your name:"
 name = gets.chomp
 
-puts "\n📌 Welcome to the ToDoList, #{name}"
+puts "\nWelcome to the ToDoList, #{name}"
 current_time = Time.now
 formatted_date = current_time.strftime("%d/%m/%Y")
-puts "📅 Today's date: #{formatted_date}"
+puts "Today's date: #{formatted_date}"
 
 loop do
   puts "\nSelect an option:"
