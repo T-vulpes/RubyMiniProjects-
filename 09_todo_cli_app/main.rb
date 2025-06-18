@@ -1,3 +1,4 @@
+# 📌 List class
 class List
   attr_accessor :items
 
@@ -22,116 +23,119 @@ class List
   end
 end
 
-def tum_kullanicilari_getir(dosya_adi)
-  kullanicilar = []
-  File.readlines(dosya_adi).each do |satir|
-    if satir.start_with?("Kullanıcı:")
-      isim = satir.split(":")[1].strip
-      kullanicilar << isim unless kullanicilar.include?(isim)
+# 📋 Retrieve all usernames from the list
+def get_all_users(file_name)
+  users = []
+  File.readlines(file_name).each do |line|
+    if line.start_with?("User:")
+      name = line.split(":")[1].strip
+      users << name unless users.include?(name)
     end
   end
-  kullanicilar
+  users
 end
 
-def kullanici_planlarini_sil(dosya_adi, secilen_isim)
-  yeni_satirlar = []
-  silme_modu = false
+# ❌ Delete all plans of a selected user
+def delete_user_plans(file_name, selected_user)
+  new_lines = []
+  delete_mode = false
 
-  File.readlines(dosya_adi).each do |satir|
-    if satir.start_with?("Kullanıcı:")
-      if satir.include?(secilen_isim)
-        silme_modu = true
+  File.readlines(file_name).each do |line|
+    if line.start_with?("User:")
+      if line.include?(selected_user)
+        delete_mode = true
         next
       else
-        silme_modu = false
+        delete_mode = false
       end
     end
 
-    if silme_modu
-      next if satir.include?("-" * 5)
+    if delete_mode
+      next if line.include?("-" * 5)
       next
     end
 
-    yeni_satirlar << satir
+    new_lines << line
   end
 
-  File.open(dosya_adi, "w") do |file|
-    file.puts yeni_satirlar
+  File.open(file_name, "w") do |file|
+    file.puts new_lines
   end
 
-  puts "\n✅ '#{secilen_isim}' All plans for have been deleted!"
+  puts "\n✅ All plans of '#{selected_user}' have been deleted!"
 end
 
-def planlari_goster(dosya_adi)
-  if File.exist?(dosya_adi)
-    puts "\n📄 Plans:"
-    puts File.read(dosya_adi)
+# 📂 Show all plans
+def show_plans(file_name)
+  if File.exist?(file_name)
+    puts "\n📄 Saved Plans:"
+    puts File.read(file_name)
   else
-    puts "Henüz plan kaydı bulunmuyor."
+    puts "No saved plans found."
   end
 end
 
-# 🔁 Ana program akışı
-puts "📝 İsminizi giriniz:"
+# 🔁 Main program loop
+puts "📝 Please enter your name:"
 name = gets.chomp
 
-puts "\n📌 ToDoList'e Hoşgeldiniz sayın #{name}"
-zaman = Time.now
-formatted_date = zaman.strftime("%d/%m/%Y")
-puts "📅 Bugünün tarihi: #{formatted_date}"
+puts "\n📌 Welcome to the ToDoList, #{name}"
+current_time = Time.now
+formatted_date = current_time.strftime("%d/%m/%Y")
+puts "📅 Today's date: #{formatted_date}"
 
 loop do
-  puts "\nYapmak istediğiniz işlemi seçiniz:"
-  puts "1 - Plan ekle"
-  puts "2 - Planları görüntüle"
-  puts "3 - Kullanıcının planlarını sil"
-  puts "4 - Çıkış"
-  print "Seçiminiz: "
+  puts "\nSelect an option:"
+  puts "1 - Add plan"
+  puts "2 - View all plans"
+  puts "3 - Delete a user's plans"
+  puts "4 - Exit"
+  print "Your choice: "
   option = gets.to_i
 
   case option
   when 1
     my_list = List.new
     loop do
-      print "Yeni plan girin: "
+      print "Enter your plan: "
       plan = gets.chomp
       my_list.add(plan)
 
-      print "Başka plan eklemek ister misiniz? (evet/hayır): "
-      cevap = gets.chomp.downcase
-      break if cevap == "hayır"
+      print "Do you want to add another? (yes/no): "
+      answer = gets.chomp.downcase
+      break if answer == "no"
     end
     my_list.save_to_file(name, formatted_date)
-    puts "✅ Planlar başarıyla kaydedildi."
+    puts "✅ Plans saved successfully."
 
   when 2
-    planlari_goster("list.txt")
+    show_plans("list.txt")
 
   when 3
     if File.exist?("list.txt")
-      puts "\n🔍 Kayıtlı Kullanıcılar:"
-      kullanicilar = tum_kullanicilari_getir("list.txt")
-      kullanicilar.each_with_index do |k, i|
-        puts "#{i + 1}. #{k}"
+      puts "\n🔍 Existing Users:"
+      users = get_all_users("list.txt")
+      users.each_with_index do |user, index|
+        puts "#{index + 1}. #{user}"
       end
 
-      print "\nSilmek istediğiniz kullanıcı adını girin: "
-      hedef = gets.chomp
+      print "\nEnter the username whose plans you want to delete: "
+      target = gets.chomp
 
-      if kullanicilar.include?(hedef)
-        kullanici_planlarini_sil("list.txt", hedef)
+      if users.include?(target)
+        delete_user_plans("list.txt", target)
       else
-        puts "❌ Bu kullanıcı bulunamadı."
+        puts "❌ User not found."
       end
     else
-      puts "Henüz kullanıcı verisi bulunamadı."
+      puts "No user data found yet."
     end
 
   when 4
-    puts "\n👋 Görüşmek üzere, #{name}!"
+    puts "\n👋 Goodbye, #{name}!"
     break
 
   else
-    puts "⚠️ Lütfen 1 ile 4 arasında bir değer girin."
+    puts "⚠️ Please enter a number between 1 and 4."
   end
 end
