@@ -62,7 +62,6 @@ def delete_user_plans(file_name, selected_user)
   puts "\n✅ All plans of '#{selected_user}' have been deleted!"
 end
 
-# 📂 Show all plans
 def show_plans(file_name)
   if File.exist?(file_name)
     puts "\n📄 Saved Plans:"
@@ -72,7 +71,6 @@ def show_plans(file_name)
   end
 end
 
-# 🔁 Main program loop
 puts "📝 Please enter your name:"
 name = gets.chomp
 
