@@ -1,4 +1,3 @@
-# 📌 List class
 class List
   attr_accessor :items
 
