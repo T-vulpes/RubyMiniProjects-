@@ -22,7 +22,6 @@ class List
   end
 end
 
-# 📋 Tüm kullanıcıları listeden çıkar
 def tum_kullanicilari_getir(dosya_adi)
   kullanicilar = []
   File.readlines(dosya_adi).each do |satir|
@@ -34,7 +33,6 @@ def tum_kullanicilari_getir(dosya_adi)
   kullanicilar
 end
 
-# ❌ Kullanıcıya ait tüm planları sil
 def kullanici_planlarini_sil(dosya_adi, secilen_isim)
   yeni_satirlar = []
   silme_modu = false
