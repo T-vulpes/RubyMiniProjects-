@@ -22,7 +22,6 @@ class List
   end
 end
 
-# 📋 Retrieve all usernames from the list
 def get_all_users(file_name)
   users = []
   File.readlines(file_name).each do |line|
@@ -34,7 +33,6 @@ def get_all_users(file_name)
   users
 end
 
-# ❌ Delete all plans of a selected user
 def delete_user_plans(file_name, selected_user)
   new_lines = []
   delete_mode = false
