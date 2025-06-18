@@ -11,9 +11,9 @@ class List
 
   def save_to_file(user_name, date)
     File.open("list.txt", "a") do |file|
-      file.puts "Kullanıcı: #{user_name}"
-      file.puts "Tarih: #{date}"
-      file.puts "Planlar:"
+      file.puts "User: #{user_name}"
+      file.puts "Date: #{date}"
+      file.puts "Plans:"
       @items.each_with_index do |item, index|
         file.puts "#{index + 1}. #{item}"
       end
