@@ -59,13 +59,12 @@ def kullanici_planlarini_sil(dosya_adi, secilen_isim)
     file.puts yeni_satirlar
   end
 
-  puts "\n✅ '#{secilen_isim}' kullanıcısının tüm planları silindi!"
+  puts "\n✅ '#{secilen_isim}' All plans for have been deleted!"
 end
 
-# 📂 Planları göster
 def planlari_goster(dosya_adi)
   if File.exist?(dosya_adi)
-    puts "\n📄 Kayıtlı Planlar:"
+    puts "\n📄 Plans:"
     puts File.read(dosya_adi)
   else
     puts "Henüz plan kaydı bulunmuyor."
