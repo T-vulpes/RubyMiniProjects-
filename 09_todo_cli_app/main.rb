@@ -101,14 +101,14 @@ loop do
       break if answer == "no"
     end
     my_list.save_to_file(name, formatted_date)
-    puts "✅ Plans saved successfully."
+    puts "Plans saved successfully."
 
   when 2
     show_plans("list.txt")
 
   when 3
     if File.exist?("list.txt")
-      puts "\n🔍 Existing Users:"
+      puts "\nExisting Users:"
       users = get_all_users("list.txt")
       users.each_with_index do |user, index|
         puts "#{index + 1}. #{user}"
@@ -120,17 +120,17 @@ loop do
       if users.include?(target)
         delete_user_plans("list.txt", target)
       else
-        puts "❌ User not found."
+        puts " User not found."
       end
     else
       puts "No user data found yet."
     end
 
   when 4
-    puts "\n👋 Goodbye, #{name}!"
+    puts "\nGoodbye, #{name}!"
     break
 
   else
-    puts "⚠️ Please enter a number between 1 and 4."
+    puts "⚠ Please enter a number between 1 and 4."
   end
 end
