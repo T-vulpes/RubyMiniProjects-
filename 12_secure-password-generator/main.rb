@@ -13,14 +13,12 @@ if length < 8
   exit
 end
 
-# Ensure at least one from each group
 password = []
 password << lowercase.sample
 password << uppercase.sample
 password << digits.sample
 password << symbols.sample
 
-# Fill the rest with random characters
 remaining = length - password.length
 remaining.times { password << all_chars.sample }
 
