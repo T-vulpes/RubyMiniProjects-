@@ -22,8 +22,5 @@ password << symbols.sample
 remaining = length - password.length
 remaining.times { password << all_chars.sample }
 
-# Shuffle for randomness
 password.shuffle!
-
-# Output the password
 puts "Generated Secure Password: #{password.join}"
