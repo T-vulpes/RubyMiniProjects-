@@ -1,6 +1,5 @@
 puts "Enter a word:"
-word = gets.chomp.strip.downcase  # Remove extra spaces and normalize
-
+word = gets.chomp.strip.downcase  
 reversed_word = word.reverse
 
 if word.empty?
