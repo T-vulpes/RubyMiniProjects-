@@ -6,10 +6,10 @@ rescue LoadError
   exit
 end
 
-puts "Kelime saymak için kullanılacak kaynağı belirtiniz:"
-puts "1 - Seçilen dosya (sadece PDF desteklenir)"
-puts "2 - Manuel gireceğiniz cümle"
-print "Seçiminiz: "
+puts "Specify the source to be used for word count:"
+puts "1 - Selected file (only PDF supported)"
+puts "2 - Sentence to be entered manually"
+print "Your choice: "
 options = gets.to_i
 
 case options
