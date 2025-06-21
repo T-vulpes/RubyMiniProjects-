@@ -11,6 +11,5 @@ else
   puts "The word '#{word}' is not a palindrome. Its reverse is '#{reversed_word}'."
 end
 
-# Wait for user input before exiting (prevents terminal from closing)
 puts "\nPress ENTER to exit..."
 gets
