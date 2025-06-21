@@ -4,10 +4,7 @@ uppercase = ('A'..'Z').to_a
 digits    = ('0'..'9').to_a
 symbols   = ['!', '-', '_', '/', '=', '^', '+', '@', '%', '&', '(', ')', '{', '}', '[', ']']
 
-# Combined pool
 all_chars = lowercase + uppercase + digits + symbols
-
-# Get desired length
 puts "Enter password length (minimum 8):"
 length = gets.chomp.to_i
 
