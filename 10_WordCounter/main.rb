@@ -1,7 +1,7 @@
 begin
   require 'pdf-reader'
 rescue LoadError
-  puts "Lütfen önce şu komutla pdf-reader kütüphanesini yükleyin:"
+  puts "Please install the pdf-reader library first with the following command:"
   puts "gem install pdf-reader"
   exit
 end
