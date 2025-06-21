@@ -1,12 +1,4 @@
-=begin
-Advanced Secure Password Generator
-Author: Deniz
-Generates a random password including at least:
-- one lowercase letter
-- one uppercase letter
-- one digit
-- one symbol
-=end
+
 
 require 'securerandom'
 
