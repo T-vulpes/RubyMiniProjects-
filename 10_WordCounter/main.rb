@@ -14,7 +14,7 @@ options = gets.to_i
 
 case options
 when 1
-  print "PDF dosyasının adını giriniz (örnek: dosya.pdf): "
+  print "Enter the name of the PDF file (example: file.pdf): "
   filename = gets.chomp
 
   begin
@@ -22,11 +22,11 @@ when 1
     full_text = ""
     reader.pages.each { |page| full_text += page.text }
     kelimeler = full_text.split(/\s+/)
-    puts "PDF'deki kelime sayısı: #{kelimeler.length}"
+    puts "Number of words in PDF: #{words.length}"
   rescue Errno::ENOENT
-    puts "❌ Dosya bulunamadı. Lütfen doğru dosya adını girin."
+    puts "❌ File not found. Please enter the correct file name."
   rescue => e
-    puts "❌ Bir hata oluştu: #{e.message}"
+    puts "❌ An error occurred: #{e.message}"
   end
 
 when 2
