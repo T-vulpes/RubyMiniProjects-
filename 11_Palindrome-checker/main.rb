@@ -1,6 +1,3 @@
-# palindrome_checker.rb
-# This program checks if the given word is a palindrome.
-
 puts "Enter a word:"
 word = gets.chomp.strip.downcase  # Remove extra spaces and normalize
 
