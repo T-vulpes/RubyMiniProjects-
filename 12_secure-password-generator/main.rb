@@ -1,8 +1,4 @@
-
-
 require 'securerandom'
-
-# Character groups
 lowercase = ('a'..'z').to_a
 uppercase = ('A'..'Z').to_a
 digits    = ('0'..'9').to_a
