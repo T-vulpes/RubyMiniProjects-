@@ -7,7 +7,6 @@ def valid_input?(input)
 end
 
 puts "Welcome to Rock, Paper, Scissors!"
-
 loop do
   print "\nChoose one (rock, paper, scissors): "
   user_input = gets.chomp.downcase
