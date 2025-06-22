@@ -1,10 +1,3 @@
-=begin
-Rock Paper Scissors Game
-- Play against the computer
-- Tracks score
-- Validates input
-- Option to play again
-=end
 
 choices = ["rock", "paper", "scissors"]
 user_score = 0
