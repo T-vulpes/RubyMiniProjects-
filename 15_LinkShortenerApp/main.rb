@@ -3,7 +3,6 @@ require 'securerandom'
 require 'webrick'
 
 $links = {}
-
 # --- Server ---
 Thread.new do
   server = WEBrick::HTTPServer.new(Port: 8000, AccessLog: [], Logger: WEBrick::Log.new(File::NULL))
@@ -50,7 +49,6 @@ output_label = TkLabel.new(root) do
   pack { padx 15; pady 5 }
 end
 
-# Button
 TkButton.new(root) do
   text "Shorten URL"
   background "#444444"
