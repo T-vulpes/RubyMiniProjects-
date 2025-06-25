@@ -16,7 +16,7 @@ puts "2 - 5 minutes"
 puts "3 - 10 seconds"
 puts "4 - Custom input (seconds)"
 puts "5 - Custom input (minutes)"
-print "> "
+print ">> "
 opt = gets.to_i
 
 case opt
