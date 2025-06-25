@@ -19,8 +19,6 @@ Thread.new do
   server.start
 end
 
-#
-
 root = TkRoot.new { title "Colorful Link Shortener" }
 root.configure("background" => "#222222")
 
