@@ -19,7 +19,7 @@ Thread.new do
   server.start
 end
 
-root = TkRoot.new { title "Colorful Link Shortener" }
+root = TkRoot.new { title "Link Shortener" }
 root.configure("background" => "#222222")
 
 TkLabel.new(root) do
