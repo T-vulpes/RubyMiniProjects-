@@ -7,7 +7,7 @@ def countdown(seconds)
     sleep(1)
     seconds -= 1
   end
-  puts "Time's up!"
+  puts "Time's up!!!"
 end
 
 puts "Select a countdown option:"
