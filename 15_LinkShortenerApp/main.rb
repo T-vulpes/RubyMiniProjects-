@@ -20,10 +20,11 @@ Thread.new do
   server.start
 end
 
+#
+
 root = TkRoot.new { title "Colorful Link Shortener" }
 root.configure("background" => "#222222")
 
-# Stylish label
 TkLabel.new(root) do
   text "Enter a URL to shorten:"
   foreground "white"
@@ -32,7 +33,6 @@ TkLabel.new(root) do
   pack { padx 15; pady 10 }
 end
 
-# Entry
 entry = TkEntry.new(root) do
   background "#333333"
   foreground "#00ffcc"
