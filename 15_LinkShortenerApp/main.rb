@@ -36,13 +36,12 @@ end
 entry = TkEntry.new(root) do
   background "#333333"
   foreground "#00ffcc"
-  insertbackground "#00ffcc"  # cursor rengi
+  insertbackground "#00ffcc" 
   font "Consolas 11"
   width 40
   pack { padx 20; pady 5 }
 end
 
-# Output Label
 output_label = TkLabel.new(root) do
   text ""
   foreground "#00ffcc"
