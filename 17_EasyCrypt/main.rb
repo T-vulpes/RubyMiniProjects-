@@ -33,7 +33,6 @@ def process_file(file_path, key, mode, message_label)
   end
 end
 
-# Encrypt button
 encrypt_button = TkButton.new(root) do
   text "🔒 Encrypt"
   command proc {
@@ -44,7 +43,6 @@ encrypt_button = TkButton.new(root) do
   pack(pady: 5)
 end
 
-# Decrypt button
 decrypt_button = TkButton.new(root) do
   text "🔓 Decrypt"
   command proc {
