@@ -1,27 +1,28 @@
 require 'tk'
 
-root = TkRoot.new { title "Dosya Şifreleme / Şifre Çözme" }
+root = TkRoot.new { title "File Encrypt / Decrypt" }
 
-# Dosya yolu etiketi ve girişi
-TkLabel.new(root) { text "Dosya Yolu:"; pack(pady: 5, anchor: 'w') }
+# File path label and entry
+TkLabel.new(root) { text "File Path:"; pack(pady: 5, anchor: 'w') }
 file_entry = TkEntry.new(root) { width 40; pack(pady: 5) }
 
-# Anahtar etiketi ve girişi
-TkLabel.new(root) { text "Anahtar (sayı):"; pack(pady: 5, anchor: 'w') }
+# Key label and entry
+TkLabel.new(root) { text "Key (number):"; pack(pady: 5, anchor: 'w') }
 key_entry = TkEntry.new(root) { width 20; pack(pady: 5) }
 
-# Sonuç mesaj etiketi
+# Result message label
 message_label = TkLabel.new(root) { text ""; pack(pady: 10) }
 
-# Ortak şifreleme/çözme fonksiyonu
+# Common encryption/decryption function
 def process_file(file_path, key, mode, message_label)
   begin
     content = File.read(file_path)
   rescue
-    message_label.text = "❌ Dosya okunamadı!"
+    message_label.text = "❌ Cannot read the file!"
     return
   end
 
+  # Simple XOR encryption/decryption
   result = content.bytes.map { |byte| (byte ^ key).chr }.join
 
   new_file = case mode
@@ -31,15 +32,15 @@ def process_file(file_path, key, mode, message_label)
 
   begin
     File.write(new_file, result)
-    message_label.text = "✅ İşlem tamam! Yeni dosya: #{new_file}"
+    message_label.text = "✅ Done! New file: #{new_file}"
   rescue
-    message_label.text = "❌ Dosya yazılamadı!"
+    message_label.text = "❌ Failed to write the file!"
   end
 end
 
-# Şifrele butonu
+# Encrypt button
 encrypt_button = TkButton.new(root) do
-  text "🔒 Şifrele"
+  text "🔒 Encrypt"
   command proc {
     path = file_entry.get
     key = key_entry.get.to_i
@@ -48,9 +49,9 @@ encrypt_button = TkButton.new(root) do
   pack(pady: 5)
 end
 
-# Şifre Çöz butonu
+# Decrypt button
 decrypt_button = TkButton.new(root) do
-  text "🔓 Şifre Çöz"
+  text "🔓 Decrypt"
   command proc {
     path = file_entry.get
     key = key_entry.get.to_i
