@@ -2,11 +2,9 @@ require 'tk'
 
 root = TkRoot.new { title "File Encrypt / Decrypt" }
 
-# File path label and entry
 TkLabel.new(root) { text "File Path:"; pack(pady: 5, anchor: 'w') }
 file_entry = TkEntry.new(root) { width 40; pack(pady: 5) }
 
-# Key label and entry
 TkLabel.new(root) { text "Key (number):"; pack(pady: 5, anchor: 'w') }
 key_entry = TkEntry.new(root) { width 20; pack(pady: 5) }
 
