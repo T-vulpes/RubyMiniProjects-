@@ -19,7 +19,6 @@ def process_file(file_path, key, mode, message_label)
   end
 
   result = content.bytes.map { |byte| (byte ^ key).chr }.join
-
   new_file = case mode
              when :encrypt then file_path + ".enc"
              when :decrypt then file_path + ".dec"
@@ -52,5 +51,4 @@ decrypt_button = TkButton.new(root) do
   }
   pack(pady: 5)
 end
-
 Tk.mainloop
