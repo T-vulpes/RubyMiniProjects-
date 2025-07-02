@@ -8,10 +8,8 @@ file_entry = TkEntry.new(root) { width 40; pack(pady: 5) }
 TkLabel.new(root) { text "Key (number):"; pack(pady: 5, anchor: 'w') }
 key_entry = TkEntry.new(root) { width 20; pack(pady: 5) }
 
-# Result message label
 message_label = TkLabel.new(root) { text ""; pack(pady: 10) }
 
-# Common encryption/decryption function
 def process_file(file_path, key, mode, message_label)
   begin
     content = File.read(file_path)
@@ -20,7 +18,6 @@ def process_file(file_path, key, mode, message_label)
     return
   end
 
-  # Simple XOR encryption/decryption
   result = content.bytes.map { |byte| (byte ^ key).chr }.join
 
   new_file = case mode
